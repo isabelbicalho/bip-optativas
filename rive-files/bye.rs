@@ -1,0 +1,2 @@
++ tchau
+- Até mais, usuário!
