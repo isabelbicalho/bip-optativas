@@ -35,7 +35,7 @@ def webhook():
             text = data['entry'][0]['messaging'][0]['message']['text']
             sender = data['entry'][0]['messaging'][0]['sender']['id']
             msg = rs.reply(sender,remove_accents(text))
-            msgs = textwrap.wrap(msg,300,break_long_words=False)
+            msgs = textwrap.wrap(msg,600,break_long_words=False)
             for m in msgs:
                 payload = {'recipient': {'id': sender}, 'message': {'text': m}}
                 r = requests.post('https://graph.facebook.com/v2.6/me/messages/?access_token=' + token, json=payload)
