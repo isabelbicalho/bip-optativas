@@ -1,2 +1,2 @@
-+ tchau
-- Até mais, usuário!
++ [*] (tchau|xau|bye) [*]
+- Até mais!
