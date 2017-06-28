@@ -5,6 +5,7 @@ import json
 from flask import Flask, request
 from unicodedata import normalize
 import unicodedata
+import re
 
 from rivescript import rivescript
 
