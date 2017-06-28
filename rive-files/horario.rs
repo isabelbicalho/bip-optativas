@@ -10,7 +10,7 @@
 - Visualização de Dados: seg e qua, 11:10-12:50. 
 
 + [*] (@horario) [*] (@ihc) [*]
-- Interação Humano-Computador: ter e qui, 17:00-18:40. 
+- Interação Humano-Computador: seg e qua, 17:00-18:40. 
 
 + [*] (@horario) [*] (@bioinfo) [*]
 - Algoritmos para Bioinformática ter e qui, 11:10-12:50.
