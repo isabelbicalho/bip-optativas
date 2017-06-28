@@ -6,6 +6,7 @@ from flask import Flask, request
 from unicodedata import normalize
 import unicodedata
 import re
+import textwrap
 
 from rivescript import rivescript
 
@@ -34,8 +35,10 @@ def webhook():
             text = data['entry'][0]['messaging'][0]['message']['text']
             sender = data['entry'][0]['messaging'][0]['sender']['id']
             msg = rs.reply(sender,remove_accents(text))
-            payload = {'recipient': {'id': sender}, 'message': {'text': msg}}
-            r = requests.post('https://graph.facebook.com/v2.6/me/messages/?access_token=' + token, json=payload)
+            msgs = textwrap(msg,300,break_long_words=False)
+            for m in msgs:
+                payload = {'recipient': {'id': sender}, 'message': {'text': m}}
+                r = requests.post('https://graph.facebook.com/v2.6/me/messages/?access_token=' + token, json=payload)
         except Exception as e:
             print(traceback.format_exc())
     elif request.method == 'GET': # Para a verificacao inicial
